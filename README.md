@@ -33,3 +33,26 @@
 ## 免责声明
 
 本工具仅用于授权的安全测试，严禁用于非法用途。
+
+## 本地编译指南
+
+由于 GitHub 文件大小限制，建议在本地环境中将工具编译为 EXE：
+
+1. **安装 PyInstaller**:
+   ```bash
+   pip install pyinstaller
+   ```
+
+2. **编译 dirsearch**:
+   ```bash
+   cd tools/dirsearch
+   pyinstaller --onefile --name dirsearch dirsearch.py
+   ```
+
+3. **编译 OneForAll**:
+   ```bash
+   cd tools/OneForAll
+   pyinstaller --onefile --name oneforall oneforall.py
+   ```
+
+编译后的文件将位于各自目录的 `dist` 文件夹中。请将它们移动到 `tools/bin/` 目录下，并在 `config.json` 中更新路径。
